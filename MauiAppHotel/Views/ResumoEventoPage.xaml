@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="MauiAppHotel.Views.ResumoEventoPage"
+    Title="Resumo do Evento"
+    BackgroundColor="#F3F6F4">
+
+	<ScrollView>
+		<VerticalStackLayout Padding="24" Spacing="18">
+
+			<Label Text="EVENTO CADASTRADO!"
+                   FontSize="25"
+                   FontAttributes="Bold"
+                   TextColor="#245B43"
+                   HorizontalTextAlignment="Center"/>
+
+			<Label Text="Confira todas as informações do evento."
+                   FontSize="14"
+                   TextColor="#64746A"
+                   HorizontalTextAlignment="Center"/>
+
+			<Frame BackgroundColor="White"
+                   CornerRadius="15"
+                   Padding="20"
+                   BorderColor="#DCE5DE">
+
+				<VerticalStackLayout Spacing="15">
+
+					<Label Text="DADOS DO EVENTO"
+                           FontSize="14"
+                           FontAttributes="Bold"
+                           TextColor="#A47C35"/>
+
+					<Label Text="Nome do evento"
+                           FontSize="12"
+                           TextColor="#849188"/>
+
+					<Label Text="{Binding Nome}"
+                           FontSize="19"
+                           FontAttributes="Bold"
+                           TextColor="#245B43"/>
+
+					<BoxView HeightRequest="1"
+                             Color="#DCE5DE"/>
+
+					<Label Text="Data de início"
+                           FontSize="12"
+                           TextColor="#849188"/>
+
+					<Label Text="{Binding DataInicioFormatada}"
+                           TextColor="#245B43"
+                           FontAttributes="Bold"/>
+
+					<Label Text="Data de término"
+                           FontSize="12"
+                           TextColor="#849188"/>
+
+					<Label Text="{Binding DataTerminoFormatada}"
+                           TextColor="#245B43"
+                           FontAttributes="Bold"/>
+
+					<Label Text="Duração do evento"
+                           FontSize="12"
+                           TextColor="#849188"/>
+
+					<Label Text="{Binding DuracaoFormatada}"
+                           TextColor="#245B43"
+                           FontAttributes="Bold"/>
+
+					<BoxView HeightRequest="1"
+                             Color="#DCE5DE"/>
+
+					<Label Text="Local"
+                           FontSize="12"
+                           TextColor="#849188"/>
+
+					<Label Text="{Binding Local}"
+                           TextColor="#245B43"
+                           FontAttributes="Bold"/>
+
+					<Label Text="Participantes"
+                           FontSize="12"
+                           TextColor="#849188"/>
+
+					<Label Text="{Binding ParticipantesFormatado}"
+                           TextColor="#245B43"
+                           FontAttributes="Bold"/>
+
+					<BoxView HeightRequest="1"
+                             Color="#DCE5DE"/>
+
+					<Label Text="Custo por participante"
+                           FontSize="12"
+                           TextColor="#849188"/>
+
+					<Label Text="{Binding CustoPorParticipanteFormatado}"
+                           TextColor="#245B43"
+                           FontAttributes="Bold"/>
+
+					<Label Text="CUSTO TOTAL DO EVENTO"
+                           FontSize="14"
+                           FontAttributes="Bold"
+                           TextColor="#A47C35"/>
+
+					<Label Text="{Binding CustoTotalFormatado}"
+                           FontSize="27"
+                           FontAttributes="Bold"
+                           TextColor="#245B43"/>
+
+				</VerticalStackLayout>
+			</Frame>
+
+			<Button Text="Novo cadastro"
+                    HeightRequest="52"
+                    CornerRadius="12"
+                    BackgroundColor="#245B43"
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    Clicked="NovoCadastro_Clicked"/>
+
+		</VerticalStackLayout>
+	</ScrollView>
+</ContentPage>

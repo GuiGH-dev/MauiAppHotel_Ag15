@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="MauiAppHotel.Views.CadastroEventoPage"
+    Title="Cadastro de Eventos"
+    BackgroundColor="#F3F6F4">
+
+	<ScrollView>
+		<VerticalStackLayout Padding="24" Spacing="15">
+
+			<Label Text="CADASTRO DE EVENTOS"
+                   FontSize="25"
+                   FontAttributes="Bold"
+                   TextColor="#245B43"
+                   HorizontalTextAlignment="Center"/>
+
+			<Label Text="Preencha os dados para cadastrar seu evento."
+                   FontSize="14"
+                   TextColor="#64746A"
+                   HorizontalTextAlignment="Center"/>
+
+			<Frame BackgroundColor="White"
+                   CornerRadius="15"
+                   Padding="18"
+                   BorderColor="#DCE5DE">
+
+				<VerticalStackLayout Spacing="12">
+
+					<Label Text="Nome do evento"
+                           FontAttributes="Bold"
+                           TextColor="#245B43"/>
+
+					<Entry x:Name="txtNome"
+                           Placeholder="Ex.: Feira de Tecnologia"/>
+
+					<Label Text="Data de início"
+                           FontAttributes="Bold"
+                           TextColor="#245B43"/>
+
+					<DatePicker x:Name="dtInicio"
+                                Format="dd/MM/yyyy"
+                                DateSelected="DtInicio_DateSelected"/>
+
+					<Label Text="Data de término"
+                           FontAttributes="Bold"
+                           TextColor="#245B43"/>
+
+					<DatePicker x:Name="dtTermino"
+                                Format="dd/MM/yyyy"/>
+
+					<Label Text="Número de participantes"
+                           FontAttributes="Bold"
+                           TextColor="#245B43"/>
+
+					<HorizontalStackLayout
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        Spacing="15">
+
+						<Label x:Name="lblParticipantes"
+                               Text="1 participante"
+                               FontSize="17"
+                               TextColor="#245B43"
+                               VerticalOptions="Center"/>
+
+						<Stepper x:Name="stpParticipantes"
+                                 Minimum="1"
+                                 Maximum="1000"
+                                 Increment="1"
+                                 Value="1"
+                                 ValueChanged="Stepper_ValueChanged"/>
+
+					</HorizontalStackLayout>
+
+					<Label Text="Local do evento"
+                           FontAttributes="Bold"
+                           TextColor="#245B43"/>
+
+					<Entry x:Name="txtLocal"
+                           Placeholder="Ex.: São Paulo - SP"/>
+
+					<Label Text="Custo por participante (R$)"
+                           FontAttributes="Bold"
+                           TextColor="#245B43"/>
+
+					<Entry x:Name="txtCusto"
+                           Placeholder="Ex.: 50,00"
+                           Keyboard="Numeric"/>
+
+				</VerticalStackLayout>
+			</Frame>
+
+			<Button Text="Cadastrar evento"
+                    HeightRequest="52"
+                    CornerRadius="12"
+                    BackgroundColor="#245B43"
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    Clicked="CadastrarEvento_Clicked"/>
+
+			<Label Text="Sistema de Cadastro de Eventos"
+                   FontSize="11"
+                   TextColor="#849188"
+                   HorizontalTextAlignment="Center"/>
+
+		</VerticalStackLayout>
+	</ScrollView>
+</ContentPage>
